@@ -2,59 +2,24 @@
 const app = angular.module('MovieApp', []);
 
 
-app.controller('AddMovieController', function ($scope, MovieService) {
-    console.log('Add Movie Controller here');
-    $scope.name = '';
-    $scope.releaseDate = '';
-    $scope.genre = '';
-
-    $scope.movies = MovieService.getMovies();
-
-    $scope.addMovie = function () {
-        const eachMovie = MovieService.addMovie($scope.name, $scope.releaseDate, $scope.genre)
-        $scope.name = '';
-        $scope.releaseDate = '';
-        $scope.genre = '';
-    }
-
-   // console.log(MovieService.getMovies());
+app.controller('GetMoviesController', function($scope, MovieService) {
+    $scope.movies = MovieService.getAll();
 });
 
+app.factory('MovieService', function($http) {
+    const movies = [];
 
-app.controller('ListMovieController', function ($scope, MovieService) {
-    $scope.movies = MovieService.getMovies();
-
-    $scope.remove = function(id) {
-        $scope.movies.splice(id, 1);
-    };
-
-    $scope.ratingBtn = function (thought, target) {
-        console.log('You are clicking on rating');
-        
-        target.rating = thought;
-    }   
-});
-
-
-
-
-app.factory('MovieService', function() {
-    let movies = [];
+    $http.get('https://api.themoviedb.org/3/discover/movie?api_key=1c3ab4a786313cd93564b50c97e21734&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1').then(function (response) {
+        angular.copy(response.data.results, movies);
+    });
 
     return {
-        addMovie: function(name, date, genre) {
-            let movie = {
-                name,
-                date,
-                genre, 
-                rating: null,
-            };
+        add(movie) {
             movies.push(movie);
         },
-
-        getMovies: function() {
+        getAll() {
             return movies;
         },
-    };
+    }
 });
 },{}]},{},[1]);
