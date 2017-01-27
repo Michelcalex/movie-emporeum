@@ -17,6 +17,7 @@
     </header>
     <main>
         <section ng-controller="GetMoviesController">
+            <h2>Movie Reviews</h2>
             <ul>
                 <li ng-repeat="currentMovie in movies">
                     <img ng-src="https://image.tmdb.org/t/p/w185_and_h278_bestv2{{ currentMovie.poster_path }}">
@@ -24,9 +25,9 @@
                     <h4>{{ currentMovie.release_date }}</h4>
                     <p>{{ currentMovie.overview }}</p>
                     <div>
-                        <button>1</button>
-                        <button>2</button>
-                        <button>3</button>
+                        <button ng-class =" { clicked: currentMovie.isRated }" ng-click="rating(currentMovie)">1</button>
+                        <button ng-class =" { clicked: currentMovie.isRated }" ng-click="rating(currentMovie)">2</button>
+                        <button ng-class =" { clicked: currentMovie.isRated }" ng-click="rating(currentMovie)">3</button>
                         <button>4</button>
                         <button>5</button>
                     </div>
