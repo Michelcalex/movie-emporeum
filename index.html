@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Scene That</title>
+    <link rel="stylesheet" href="https://necolas.github.io/normalize.css/5.0.0/normalize.css">
+    <link rel="icon" type="image/png" href="../assets/favicon-film.ico">
+    <link href="https://fonts.googleapis.com/css?family=Economica|Fascinate" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+
+<body ng-app="MovieApp">
+    <header>
+        <h1>Scene That</h1>
+    </header>
+    <main>
+        <section ng-controller="GetMoviesController">
+            <ul>
+                <li ng-repeat="currentMovie in movies">
+                    <img ng-src="">
+                    <h3>Title of Movie Here</h3>
+                    <p>Release Date</p>
+                    <div>
+                        <button>1</button>
+                        <button>2</button>
+                        <button>3</button>
+                        <button>4</button>
+                        <button>5</button>
+                    </div>
+                </li>
+            </ul>
+        </section>
+    </main>
+    
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
+    <script src="https://use.fontawesome.com/7fb1b7bdac.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>

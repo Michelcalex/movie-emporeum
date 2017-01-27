@@ -1,0 +1,133 @@
+/* Include Foundation */
+
+@import '../../../../node_modules/foundation-sites/scss/foundation';
+
+@include foundation-global-styles;
+@include foundation-grid;
+
+
+$header-bkgd-color: #80B192;
+$primary-bkgd-color: #6A8D92;
+$secondary-bkgd-color: #fff;
+
+$primary-txt-color: #fff;
+$highlight-txt-color: #493548;
+
+$header-font: 'Fascinate', cursive;
+$primary-font: 'Economica', sans-serif;
+
+$btn-primary-color: #c3d1d3;
+$btn-good-color: #ccdfd3;
+$btn-bad-color: #493548;
+$primary-border-radius: 5px;
+
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+ display: none !important;
+}
+
+button {
+    @include button;
+    border-radius: $primary-border-radius;
+    background-color: $btn-primary-color;
+    font-family: $primary-font;
+    font-size: 1em;
+    
+}
+
+
+body {
+    font-family: $primary-font;
+
+    header {
+        @include grid-row();
+        background-color: $header-bkgd-color;
+        max-width: 100%;
+        text-align: center;
+
+        h1 {
+            font-family: $header-font;
+            color: $highlight-txt-color;
+            text-transform: uppercase;
+        }
+    }
+
+    #add-movie-container {
+        @include grid-row();
+        text-align: center;
+        padding: 3% 3% 1%;
+        
+        div {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+
+            input {
+                margin: 2%;
+            }
+        }
+    }
+
+    #list-movie-container {
+        @include grid-row();
+        max-width: 100%;
+        background-color: $primary-bkgd-color;
+        text-align: center;
+
+        h2 {
+            font-size: 2em;
+        }
+
+        ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding: 0;
+
+            li {
+                background-color: $secondary-bkgd-color;
+                width: 25%;
+                margin: 2%;
+                padding: 2%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                border-radius: $primary-border-radius;
+
+                span {
+                    display: flex;
+                    flex-direction: column;
+
+                    &:nth-child(1) {
+                        font-weight: bold;
+                        font-size: 1.1em;
+                    }
+
+                    &:nth-child(2) {
+                        font-style: italic;
+                    }
+                }
+
+                div {
+
+                    button {
+                    margin: 0;
+                    margin-top: 15px;
+                    }
+
+                    .good-btn.good {
+                        background-color: $btn-good-color;
+                    }
+
+                    .bad-btn.bad {
+                        background-color: $btn-bad-color;
+                    }
+                }
+
+                
+            }
+        }
+    }
+
+}
