@@ -19,9 +19,10 @@
         <section ng-controller="GetMoviesController">
             <ul>
                 <li ng-repeat="currentMovie in movies">
-                    <img ng-src="">
-                    <h3>Title of Movie Here</h3>
-                    <p>Release Date</p>
+                    <img ng-src="https://image.tmdb.org/t/p/w185_and_h278_bestv2{{ currentMovie.poster_path }}">
+                    <h3>{{ currentMovie.original_title }}</h3>
+                    <h4>{{ currentMovie.release_date }}</h4>
+                    <p>{{ currentMovie.overview }}</p>
                     <div>
                         <button>1</button>
                         <button>2</button>
