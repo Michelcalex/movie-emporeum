@@ -6,12 +6,14 @@
 @include foundation-grid;
 
 
-$header-bkgd-color: #80B192;
+// $header-bkgd-color: #80B192;
+$header-bkgd-color:#493548;
 $primary-bkgd-color: #6A8D92;
 $secondary-bkgd-color: #fff;
 
-$highlight-txt-color: #493548;
-$secondary-txt-color: #4B4E6D;
+// $highlight-txt-color: #493548;
+$highlight-txt-color: #80B192;
+$secondary-txt-color: #493548;
 $third-txt-color: #333333;
 
 $header-font: 'Monofett', cursive;
@@ -21,7 +23,7 @@ $btn-primary-color: #c3d1d3;
 $btn-highlight-color: #493548;
 $primary-border-radius: 5px;
 
-
+$md-screen: 1200px;
 
 body {
     font-family: $primary-font;
@@ -64,15 +66,26 @@ body {
             justify-content: center;
             flex-wrap: wrap;
             padding: 0;
-
+            
             li {
                 background-color: $secondary-bkgd-color;
-                width: 20%;
-                margin: 2%;
+                width: 30%;
+                margin: 2% 5%;
                 padding: 2%;
                 position: relative;
                 list-style: none;
                 border-radius: $primary-border-radius;
+
+                @media(min-width: $md-screen) {
+                    background-color: $secondary-bkgd-color;
+                    width: 20%;
+                    margin: 2%;
+                    padding: 2%;
+                    position: relative;
+                    list-style: none;
+                    border-radius: $primary-border-radius;
+                }
+                
 
                 h3 {
                     font-size: 1.6em;
@@ -96,14 +109,26 @@ body {
                     right: 0;
 
                     button {
-                        @include button;
-                        border-radius: $primary-border-radius;
+                        padding: 8px;
                         background-color: $btn-primary-color;
-                        font-family: $primary-font;
-                        font-size: 1em;
-                        margin: 0;
-                        margin-top: 15px;
-                        padding: 0.75em;
+                        border-radius: $primary-border-radius;
+
+
+                        @media(min-width: $md-screen) {
+                            @include button;
+                            border-radius: $primary-border-radius;
+                            background-color: $btn-primary-color;
+                            font-family: $primary-font;
+                            font-size: 1em;
+                            margin: 0;
+                            margin-top: 15px;
+                            padding: 0.75em;
+                        }
+
+                        .fa {
+                            color: #fff;
+                        }
+
                     }
 
                     button:hover{
