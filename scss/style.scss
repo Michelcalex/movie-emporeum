@@ -10,15 +10,13 @@ $header-bkgd-color: #80B192;
 $primary-bkgd-color: #6A8D92;
 $secondary-bkgd-color: #fff;
 
-$primary-txt-color: #fff;
 $highlight-txt-color: #493548;
 
 $header-font: 'Monofett', cursive;
 $primary-font: 'Economica', sans-serif;
 
 $btn-primary-color: #c3d1d3;
-$btn-good-color: #ccdfd3;
-$btn-bad-color: #493548;
+$btn-highlight-color: #493548;
 $primary-border-radius: 5px;
 
 
@@ -49,6 +47,9 @@ body {
             font-family: $header-font;
             color: $highlight-txt-color;
             text-transform: uppercase;
+            font-size: 4em;
+            margin: 0;
+            padding: 1.5%;
         }
     }
 
@@ -62,6 +63,10 @@ body {
             font-size: 2em;
         }
 
+        h3 {
+            font-size: 1.2em;
+        }
+
         ul {
             display: flex;
             justify-content: center;
@@ -70,9 +75,10 @@ body {
 
             li {
                 background-color: $secondary-bkgd-color;
-                width: 18%;
+                width: 20%;
                 margin: 2%;
                 padding: 2%;
+                position: relative;
                 list-style: none;
                 border-radius: $primary-border-radius;
 
@@ -88,32 +94,25 @@ body {
 
                 p {
                     font-style: italic; 
+                    padding-bottom: 50px;
                 }
 
                 div {
+                    position: absolute;
+                    bottom: 5%;
+                    left: 0; 
+                    right: 0;
 
                     button {
                     margin: 0;
                     margin-top: 15px;
-
-                        
-
+                    padding: 0.75em;
                     }
 
                     .lit {
-                            background-color: red;
+                            background-color: $btn-highlight-color;
                         }
-
-                    // .good-btn.good {
-                    //     background-color: $btn-good-color;
-                    // }
-
-                    // .bad-btn.bad {
-                    //     background-color: $btn-bad-color;
-                    // }
                 }
-
-                
             }
         }
     }

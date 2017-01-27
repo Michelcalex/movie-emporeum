@@ -17,12 +17,13 @@
     </header>
     <main>
         <section ng-controller="GetMoviesController">
-            <h2>Movie Reviews</h2>
+            <h2>Movie Reviews from Movie Fanatics just like you!</h2>
+            <h3>Been there? Scene that? Well let us know what you think!</h3>
             <ul>
                 <li ng-repeat="currentMovie in movies">
                     <img ng-src="https://image.tmdb.org/t/p/w185_and_h278_bestv2{{ currentMovie.poster_path }}">
                     <h3>{{ currentMovie.original_title }}</h3>
-                    <h4>{{ currentMovie.release_date }}</h4>
+                    <h4>Released: {{ currentMovie.release_date }}</h4>
                     <p>{{ currentMovie.overview }}</p>
                     <div>
                         <button ng-click="rating(1, currentMovie)" ng-class="{ lit: currentMovie.ratingDone >= 1 }"><i class="fa fa-star" aria-hidden="true"></i></button>

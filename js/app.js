@@ -1,11 +1,5 @@
 const app = angular.module('MovieApp', []);
 
-// function Button(onemovie, count) {
-//     this.button = false;
-
-//     return this;
-// }
-
 
 app.controller('GetMoviesController', function($scope, MovieService) {
     $scope.movies = MovieService.getAll();
@@ -13,8 +7,6 @@ app.controller('GetMoviesController', function($scope, MovieService) {
     $scope.rating = function(count, target) {
 
         target.ratingDone = count;
-        // console.log('clicking' + count);
-        // MovieService.giveRating(target, count);
         console.log(count);
     };
 });
@@ -33,11 +25,5 @@ app.factory('MovieService', function($http) {
         getAll() {
             return movies;
         },
-
-        // giveRating(thisMovie, count) {
-        //     thisMovie.isRated = count;
-        //     // thisMovie.count = count;
-        //     console.log(count);
-        // }
     }
 });
