@@ -11,6 +11,8 @@ $primary-bkgd-color: #6A8D92;
 $secondary-bkgd-color: #fff;
 
 $highlight-txt-color: #493548;
+$secondary-txt-color: #4B4E6D;
+$third-txt-color: #333333;
 
 $header-font: 'Monofett', cursive;
 $primary-font: 'Economica', sans-serif;
@@ -19,19 +21,6 @@ $btn-primary-color: #c3d1d3;
 $btn-highlight-color: #493548;
 $primary-border-radius: 5px;
 
-
-button {
-    @include button;
-    border-radius: $primary-border-radius;
-    background-color: $btn-primary-color;
-    font-family: $primary-font;
-    font-size: 1em;
-    
-}
-
-.clicked {
-    background-color:green;
-}
 
 
 body {
@@ -61,10 +50,13 @@ body {
 
         h2 {
             font-size: 2em;
+            color: $secondary-txt-color;
+            font-weight: bolder !important;
         }
 
         h3 {
             font-size: 1.2em;
+            color: $third-txt-color;
         }
 
         ul {
@@ -104,9 +96,22 @@ body {
                     right: 0;
 
                     button {
-                    margin: 0;
-                    margin-top: 15px;
-                    padding: 0.75em;
+                        @include button;
+                        border-radius: $primary-border-radius;
+                        background-color: $btn-primary-color;
+                        font-family: $primary-font;
+                        font-size: 1em;
+                        margin: 0;
+                        margin-top: 15px;
+                        padding: 0.75em;
+                    }
+
+                    button:hover{
+                        background-color: $btn-highlight-color;
+                    }
+
+                    button:focus {
+                        background-color: $btn-highlight-color;
                     }
 
                     .lit {

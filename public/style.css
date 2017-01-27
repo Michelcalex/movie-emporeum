@@ -1253,34 +1253,6 @@ button {
       .column-block > :last-child {
         margin-bottom: 0; } }
 
-button {
-  display: inline-block;
-  vertical-align: middle;
-  margin: 0 0 1rem 0;
-  padding: 0.85em 1em;
-  -webkit-appearance: none;
-  border: 1px solid transparent;
-  border-radius: 0;
-  transition: background-color 0.25s ease-out, color 0.25s ease-out;
-  font-size: 0.9rem;
-  line-height: 1;
-  text-align: center;
-  cursor: pointer;
-  background-color: #1779ba;
-  color: #fefefe;
-  border-radius: 5px;
-  background-color: #c3d1d3;
-  font-family: "Economica", sans-serif;
-  font-size: 1em; }
-  [data-whatinput='mouse'] button {
-    outline: 0; }
-  button:hover, button:focus {
-    background-color: #14679e;
-    color: #fefefe; }
-
-.clicked {
-  background-color: green; }
-
 body {
   font-family: "Economica", sans-serif; }
   body header {
@@ -1315,7 +1287,12 @@ body {
     body section::after {
       clear: both; }
     body section h2 {
-      font-size: 2em; }
+      font-size: 2em;
+      color: #4B4E6D;
+      font-weight: bolder !important; }
+    body section h3 {
+      font-size: 1.2em;
+      color: #333333; }
     body section ul {
       display: flex;
       justify-content: center;
@@ -1344,8 +1321,35 @@ body {
           left: 0;
           right: 0; }
           body section ul li div button {
+            display: inline-block;
+            vertical-align: middle;
+            margin: 0 0 1rem 0;
+            padding: 0.85em 1em;
+            -webkit-appearance: none;
+            border: 1px solid transparent;
+            border-radius: 0;
+            transition: background-color 0.25s ease-out, color 0.25s ease-out;
+            font-size: 0.9rem;
+            line-height: 1;
+            text-align: center;
+            cursor: pointer;
+            background-color: #1779ba;
+            color: #fefefe;
+            border-radius: 5px;
+            background-color: #c3d1d3;
+            font-family: "Economica", sans-serif;
+            font-size: 1em;
             margin: 0;
             margin-top: 15px;
             padding: 0.75em; }
+            [data-whatinput='mouse'] body section ul li div button {
+              outline: 0; }
+            body section ul li div button:hover, body section ul li div button:focus {
+              background-color: #14679e;
+              color: #fefefe; }
+          body section ul li div button:hover {
+            background-color: #493548; }
+          body section ul li div button:focus {
+            background-color: #493548; }
           body section ul li div .lit {
             background-color: #493548; }
