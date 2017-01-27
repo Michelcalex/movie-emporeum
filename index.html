@@ -6,7 +6,7 @@
     <title>Scene That</title>
     <link rel="stylesheet" href="https://necolas.github.io/normalize.css/5.0.0/normalize.css">
     <link rel="icon" type="image/png" href="../assets/favicon-film.ico">
-    <link href="https://fonts.googleapis.com/css?family=Economica|Fascinate" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Economica|Fascinate|Monofett" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     
 </head>
@@ -25,11 +25,11 @@
                     <h4>{{ currentMovie.release_date }}</h4>
                     <p>{{ currentMovie.overview }}</p>
                     <div>
-                        <button ng-class =" { clicked: currentMovie.isRated }" ng-click="rating(currentMovie)">1</button>
-                        <button ng-class =" { clicked: currentMovie.isRated }" ng-click="rating(currentMovie)">2</button>
-                        <button ng-class =" { clicked: currentMovie.isRated }" ng-click="rating(currentMovie)">3</button>
-                        <button>4</button>
-                        <button>5</button>
+                        <button ng-click="rating(1, currentMovie)" ng-class="{ lit: currentMovie.ratingDone >= 1 }"><i class="fa fa-star" aria-hidden="true"></i></button>
+                        <button ng-click="rating(2, currentMovie)" ng-class="{ lit: currentMovie.ratingDone >= 2 }"><i class="fa fa-star" aria-hidden="true"></i></button>
+                        <button ng-click="rating(3, currentMovie)" ng-class="{ lit: currentMovie.ratingDone >= 3 }"><i class="fa fa-star" aria-hidden="true"></i></button>
+                        <button ng-click="rating(4, currentMovie)" ng-class="{ lit: currentMovie.ratingDone >= 4 }"><i class="fa fa-star" aria-hidden="true"></i></button>
+                        <button ng-click="rating(5, currentMovie)" ng-class="{ lit: currentMovie.ratingDone >= 5 }"><i class="fa fa-star" aria-hidden="true"></i></button>
                     </div>
                 </li>
             </ul>
