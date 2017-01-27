@@ -13,7 +13,7 @@ $secondary-bkgd-color: #fff;
 $primary-txt-color: #fff;
 $highlight-txt-color: #493548;
 
-$header-font: 'Fascinate', cursive;
+$header-font: 'Monofett', cursive;
 $primary-font: 'Economica', sans-serif;
 
 $btn-primary-color: #c3d1d3;
@@ -74,9 +74,6 @@ body {
                 margin: 2%;
                 padding: 2%;
                 list-style: none;
-                // display: flex;
-                // flex-direction: column;
-                // align-items: center;
                 border-radius: $primary-border-radius;
 
                 h3 {
@@ -98,7 +95,14 @@ body {
                     button {
                     margin: 0;
                     margin-top: 15px;
+
+                        
+
                     }
+
+                    .lit {
+                            background-color: red;
+                        }
 
                     // .good-btn.good {
                     //     background-color: $btn-good-color;
@@ -113,5 +117,4 @@ body {
             }
         }
     }
-
 }
